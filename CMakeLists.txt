@@ -1,50 +1,42 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(allocator VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(print_ip VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-find_package(Boost COMPONENTS log REQUIRED)
-find_package(Boost COMPONENTS program_options REQUIRED)
-find_package(Threads)
 
-add_executable(allocator main.cpp newdelete.cpp)
+add_executable(print_ip main.cpp)
 
-add_executable(test_allocator test_allocator.cpp newdelete.cpp)
+add_executable(test_printer test_printer.cpp)
 
 
-set_target_properties(allocator test_allocator PROPERTIES
+set_target_properties(print_ip test_printer PROPERTIES
   CXX_STANDARD 14
   CXX_STANDARD_REQUIRED ON
   COMPILE_DEFINITIONS BOOST_LOG_DYN_LINK
   COMPILE_OPTIONS -Wpedantic -Wall -Wextra
 )
 
-target_link_libraries(allocator
+target_link_libraries(print_ip
   ${Boost_LIBRARIES}
-  ${Boost_SYSTEM_LIBRARY}
-  ${Boost_LOG_LIBRARY}
-  ${Boost_LOG_SETUP_LIBRARY}
-  ${Boost_THREAD_LIBRARY}
-  ${CMAKE_THREAD_LIBS_INIT}
 )
 
-set_target_properties(test_allocator PROPERTIES
+set_target_properties(test_printer PROPERTIES
   COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
   INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
 )
 
 
-target_link_libraries(test_allocator
+target_link_libraries(test_printer
   ${Boost_UNIT_TEST_LIBRARIES}
   ${Boost_LIBRARIES}
 )
 
 
 configure_file("${PROJECT_SOURCE_DIR}/version.h.in" "${PROJECT_BINARY_DIR}/version.h")
-target_include_directories(allocator PUBLIC "${PROJECT_BINARY_DIR}")
+target_include_directories(print_ip PUBLIC "${PROJECT_BINARY_DIR}")
 
 
-install(TARGETS allocator RUNTIME DESTINATION bin)
+install(TARGETS print_ip RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
@@ -58,4 +50,4 @@ include (CPack)
 
 enable_testing()
 
-add_test(test_allocator test_allocator)
+add_test(test_printer test_printer)
