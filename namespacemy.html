@@ -89,6 +89,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <div class="title">Пространство имен my</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>решение поставленной задачи  
+<a href="#details">Подробнее...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Классы</h2></td></tr>
@@ -125,11 +128,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="memitem:aada1b47224f23428c3013827bda79af2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy_1_1enable__if.html">enable_if</a>&lt; std::is_integral&lt; T &gt;<br class="typebreak"/>
 ::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#aada1b47224f23428c3013827bda79af2">print_ip</a> (const T &amp;val)</td></tr>
 <tr class="separator:aada1b47224f23428c3013827bda79af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fcf73b814599cd93c74f2de707e8619"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a6fcf73b814599cd93c74f2de707e8619"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy_1_1enable__if.html">enable_if</a>&lt; <a class="el" href="structmy_1_1is__one__of.html">is_one_of</a>&lt; T, <br class="typebreak"/>
-std::string &gt;::value, <br class="typebreak"/>
-std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a6fcf73b814599cd93c74f2de707e8619">print_ip</a> (const T &amp;val)</td></tr>
-<tr class="separator:a6fcf73b814599cd93c74f2de707e8619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b88a7546a824b1d436ed305b7e0ad6b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2b88a7546a824b1d436ed305b7e0ad6b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy_1_1enable__if.html">enable_if</a>&lt; <a class="el" href="structmy_1_1is__one__of.html">is_one_of</a>&lt; T, <br class="typebreak"/>
+std::string, const char * &gt;<br class="typebreak"/>
+::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a2b88a7546a824b1d436ed305b7e0ad6b">print_ip</a> (const T &amp;val)</td></tr>
+<tr class="separator:a2b88a7546a824b1d436ed305b7e0ad6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f14906f04431dd4951efd506a2fed8f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a5f14906f04431dd4951efd506a2fed8f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structmy_1_1enable__if.html">enable_if</a>&lt; <a class="el" href="structmy_1_1is__one__of.html">is_one_of</a>&lt; T, <br class="typebreak"/>
 std::vector&lt; typename <br class="typebreak"/>
@@ -137,9 +140,17 @@ T::value_type &gt;, std::list<br class="typebreak"/>
 &lt; typename T::value_type &gt;<br class="typebreak"/>
  &gt;::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a5f14906f04431dd4951efd506a2fed8f">print_ip</a> (const T &amp;val)</td></tr>
 <tr class="separator:a5f14906f04431dd4951efd506a2fed8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5113c43f4fb964c6c9bf7e612e20290e"><td class="memTemplParams" colspan="2">template&lt;class T , class... Targs&gt; </td></tr>
+<tr class="memitem:a5113c43f4fb964c6c9bf7e612e20290e"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a5113c43f4fb964c6c9bf7e612e20290e">print_ip</a> (const T &amp;val, Targs...Fargs)</td></tr>
+<tr class="separator:a5113c43f4fb964c6c9bf7e612e20290e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Реализация функции печати условного ip адреса </p>
+<div class="textblock"><p>решение поставленной задачи </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Необходимо сделать:</a></b></dt><dd><ul>
+<li>по возможности использовать stl (<a class="el" href="structmy_1_1type__is.html">type_is</a>, <a class="el" href="structmy_1_1enable__if.html">enable_if</a> ...)</li>
+<li>реализовать печать tuple чисел </li>
+</ul>
+</dd></dl>
 </div><h2 class="groupheader">Типы</h2>
 <a class="anchor" id="a60aaa4a04d42a2ab072094d7a960a235"></a>
 <div class="memitem">
@@ -195,17 +206,25 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Печать условного ip адреса из целочисленного типа</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>число, которое нужно напечатать как условный ip адрес </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>строка std::string, содержащая представление числа val, как ip адреса </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6fcf73b814599cd93c74f2de707e8619"></a>
+<a class="anchor" id="a2b88a7546a824b1d436ed305b7e0ad6b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structmy_1_1enable__if.html">enable_if</a>&lt;<a class="el" href="structmy_1_1is__one__of.html">is_one_of</a>&lt;T, std::string&gt;::value, std::string&gt;::type my::print_ip </td>
+          <td class="memname"><a class="el" href="structmy_1_1enable__if.html">enable_if</a>&lt;<a class="el" href="structmy_1_1is__one__of.html">is_one_of</a>&lt;T, std::string, const char*&gt;::value, std::string&gt;::type my::print_ip </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
@@ -213,6 +232,14 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Печать условного ip адреса из строки</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>строка, содержащая представление условного ip адреса </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>строка, содержащая представление условного ip адреса </dd></dl>
 
 </div>
 </div>
@@ -231,6 +258,57 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Печать списка условных ip адресов из std::vector и std::list</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>std::vector или std::list чисел, которые нужно напечатать как условный ip адрес </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>строка std::string, содержащая представление всех чисел из контейнера, как ip адреса</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Необходимо сделать:</a></b></dt><dd><ul>
+<li>убрать лишний std::endl в конце списка </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5113c43f4fb964c6c9bf7e612e20290e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class... Targs&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string my::print_ip </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Targs...&#160;</td>
+          <td class="paramname"><em>Fargs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Varidic для печати списка условных ip адресов из разных типов данных</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">\return</td><td>строка std::string, содержащая представление числа val, как ip адреса</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Необходимо сделать:</a></b></dt><dd><ul>
+<li>Добавить печать неизвестного типа </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
