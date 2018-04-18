@@ -14,8 +14,8 @@
 
 
 /**
-	Основной набор основных тестов 
-*/
+ * Основной набор основных тестов 
+ */
 BOOST_AUTO_TEST_SUITE(test_allocator_suite)
 
 BOOST_AUTO_TEST_CASE(test_logging_allocator) 
