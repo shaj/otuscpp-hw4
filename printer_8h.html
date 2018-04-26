@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Переменные</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Определения типов</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Макросы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Указатель</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Классы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Пространства имен</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Файлы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Функции</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Макросы</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Страницы</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,22 +84,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
   <div class="summary">
 <a href="#nested-classes">Классы</a> &#124;
 <a href="#namespaces">Пространства имен</a> &#124;
-<a href="#typedef-members">Определения типов</a> &#124;
 <a href="#func-members">Функции</a>  </div>
   <div class="headertitle">
 <div class="title">Файл printer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="reminder_8h_source.html">reminder.h</a>&quot;</code><br/>
+<code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;sstream&gt;</code><br/>
+<code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;algorithm&gt;</code><br/>
 <code>#include &lt;iterator&gt;</code><br/>
+<code>#include &lt;type_traits&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для printer.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="printer_8h__incl.png" border="0" usemap="#printer_8h" alt=""/></div>
 <map name="printer_8h" id="printer_8h">
-</map>
+<area shape="rect" id="node2" href="reminder_8h.html" title="reminder.h" alt="" coords="5,80,87,107"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Граф файлов, в которые включается этот файл:</div>
@@ -113,14 +115,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Классы</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy_1_1type__is.html">my::type_is&lt; T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy_1_1integral__constant.html">my::integral_constant&lt; T, v &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy_1_1enable__if.html">my::enable_if&lt; B, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy_1_1enable__if_3_01false_00_01T_01_4.html">my::enable_if&lt; false, T &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy_1_1is__one__of.html">my::is_one_of&lt; T, Args &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmy_1_1is__one__of_3_01T_01_4.html">my::is_one_of&lt; T &gt;</a></td></tr>
@@ -136,34 +130,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
 <tr class="memdesc:namespacemy"><td class="mdescLeft">&#160;</td><td class="mdescRight">решение поставленной задачи <br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Определения типов</h2></td></tr>
-<tr class="memitem:a60aaa4a04d42a2ab072094d7a960a235"><td class="memTemplParams" colspan="2">template&lt;bool B&gt; </td></tr>
-<tr class="memitem:a60aaa4a04d42a2ab072094d7a960a235"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a60aaa4a04d42a2ab072094d7a960a235">my::bool_constant</a> = integral_constant&lt; bool, B &gt;</td></tr>
-<tr class="separator:a60aaa4a04d42a2ab072094d7a960a235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8977a8a02e3eb9bd0096d6169eb4e828"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy.html#a8977a8a02e3eb9bd0096d6169eb4e828">my::true_type</a> = bool_constant&lt; true &gt;</td></tr>
-<tr class="separator:a8977a8a02e3eb9bd0096d6169eb4e828"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3c9e96cb23291a63b773a64d50258dc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemy.html#ac3c9e96cb23291a63b773a64d50258dc">my::false_type</a> = bool_constant&lt; false &gt;</td></tr>
-<tr class="separator:ac3c9e96cb23291a63b773a64d50258dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:aada1b47224f23428c3013827bda79af2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aada1b47224f23428c3013827bda79af2"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; std::is_integral&lt; T &gt;<br class="typebreak"/>
-::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#aada1b47224f23428c3013827bda79af2">my::print_ip</a> (const T &amp;val)</td></tr>
-<tr class="separator:aada1b47224f23428c3013827bda79af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b88a7546a824b1d436ed305b7e0ad6b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a2b88a7546a824b1d436ed305b7e0ad6b"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; is_one_of&lt; T, <br class="typebreak"/>
+<tr class="memitem:aaa990ea621aec67308342df8c0126dcb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aaa990ea621aec67308342df8c0126dcb"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; std::is_integral&lt; T &gt;::value, <br class="typebreak"/>
+std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#aaa990ea621aec67308342df8c0126dcb">my::print_ip</a> (const T &amp;val)</td></tr>
+<tr class="separator:aaa990ea621aec67308342df8c0126dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a558c72ecda1f2c9773ef21246f8fdfdf"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a558c72ecda1f2c9773ef21246f8fdfdf"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; is_one_of&lt; T, <br class="typebreak"/>
 std::string, const char * &gt;<br class="typebreak"/>
-::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a2b88a7546a824b1d436ed305b7e0ad6b">my::print_ip</a> (const T &amp;val)</td></tr>
-<tr class="separator:a2b88a7546a824b1d436ed305b7e0ad6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f14906f04431dd4951efd506a2fed8f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a5f14906f04431dd4951efd506a2fed8f"><td class="memTemplItemLeft" align="right" valign="top">enable_if&lt; is_one_of&lt; T, <br class="typebreak"/>
+::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a558c72ecda1f2c9773ef21246f8fdfdf">my::print_ip</a> (const T &amp;val)</td></tr>
+<tr class="separator:a558c72ecda1f2c9773ef21246f8fdfdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7462d1b56a1ab2d6eeb72513540e54c6"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7462d1b56a1ab2d6eeb72513540e54c6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; is_one_of&lt; T, <br class="typebreak"/>
 std::vector&lt; typename <br class="typebreak"/>
 T::value_type &gt;, std::list<br class="typebreak"/>
 &lt; typename T::value_type &gt;<br class="typebreak"/>
- &gt;::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a5f14906f04431dd4951efd506a2fed8f">my::print_ip</a> (const T &amp;val)</td></tr>
-<tr class="separator:a5f14906f04431dd4951efd506a2fed8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+ &gt;::value, std::string &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a7462d1b56a1ab2d6eeb72513540e54c6">my::print_ip</a> (const T &amp;val)</td></tr>
+<tr class="separator:a7462d1b56a1ab2d6eeb72513540e54c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5113c43f4fb964c6c9bf7e612e20290e"><td class="memTemplParams" colspan="2">template&lt;class T , class... Targs&gt; </td></tr>
 <tr class="memitem:a5113c43f4fb964c6c9bf7e612e20290e"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemy.html#a5113c43f4fb964c6c9bf7e612e20290e">my::print_ip</a> (const T &amp;val, Targs...Fargs)</td></tr>
 <tr class="separator:a5113c43f4fb964c6c9bf7e612e20290e"><td class="memSeparator" colspan="2">&#160;</td></tr>
