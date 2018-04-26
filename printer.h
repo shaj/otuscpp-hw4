@@ -49,18 +49,6 @@ struct is_one_of<T, U, Args...> : is_one_of<T, Args...> {};
 
 
 /**
- * Печать условного ip адреса из 1-байтового типа
- *
- * \param val число, которое нужно напечатать как условный ip адрес
- * \return строка std::string, содержащая представление числа val, как ip адреса
- */
-// template<typename T>
-// typename std::enable_if<is_one_of<T, unsigned char, char>::value, std::string>::type print_ip(const T &val)
-// {
-// 	return std::to_string(static_cast<int>(val));
-// }
-
-/**
  * Печать условного ip адреса из целочисленного типа
  *
  * \param val число, которое нужно напечатать как условный ip адрес
@@ -70,11 +58,29 @@ template<typename T>
 typename std::enable_if<std::is_integral<T>::value, std::string>::type print_ip(const T &val)
 {
 	std::ostringstream s;
-	auto pLow = reinterpret_cast<const unsigned char*>(&val);
-	auto pHigh = reinterpret_cast<const unsigned char*>(&val) + sizeof(val);
+	if(sizeof(val) == 1)
+	{
+		auto pLow = reinterpret_cast<const unsigned char*>(&val);
+		s << static_cast<unsigned int>(*pLow);
+	}
+	else
+	{
+#ifdef BIG_ENDIAN
+		auto pLow = reinterpret_cast<const unsigned char*>(&val);
+		auto pHigh = reinterpret_cast<const unsigned char*>(&val) + sizeof(val);
 
-	std::reverse_copy(pLow+1, pHigh, std::ostream_iterator<unsigned int>(s, "."));
-	s << static_cast<unsigned int>(*pLow);
+		std::reverse_copy(pLow+1, pHigh, std::ostream_iterator<unsigned int>(s, "."));
+		s << static_cast<unsigned int>(*pLow);
+#elif LITTLE_ENDIAN
+		auto pLow = reinterpret_cast<const unsigned char*>(&val);
+		auto pHigh = reinterpret_cast<const unsigned char*>(&val) + sizeof(val);
+
+		std::copy(pLow, pHigh-1, std::ostream_iterator<unsigned int>(s, "."));
+		s << static_cast<unsigned int>(*(pHigh-1));
+#else
+#error "No endianness macro defined"
+#endif
+	}
 
 	return s.str();
 }
@@ -106,16 +112,25 @@ typename std::enable_if<is_one_of<T, std::vector<typename T::value_type>, std::l
 		std::string>::type print_ip(const T &val)
 {
 	std::ostringstream s;
+	bool f = true;
 	for(const auto &it: val)
 	{
-		s << print_ip(it) << std::endl;
+		if(f)
+		{
+			s << print_ip(it);
+			f = false;
+		}
+		else
+		{
+			s << "." << print_ip(it);
+		}
 	}
 	return s.str();
 }	
 
 
 /**
- * Varidic для печати списка условных ip адресов
+ * Variadic для печати списка условных ip адресов
  * из разных типов данных
  *
  * \param 
