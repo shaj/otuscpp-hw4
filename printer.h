@@ -24,6 +24,7 @@
 #include <algorithm>
 #include <iterator>
 #include <type_traits>
+#include <list>
 
 
 namespace my

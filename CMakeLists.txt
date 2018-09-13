@@ -1,13 +1,14 @@
 cmake_minimum_required(VERSION 3.2)
+set(CMAKE_C_COMPILER gcc)
 
 set(PATCH_VERSION "1")
 if($ENV{TRAVIS_BUILD_NUMBER})
   set(PATCH_VERSION $ENV{TRAVIS_BUILD_NUMBER})
 endif()
 
-project(print_ip VERSION 0.0.${PATCH_VERSION})
+project(print_ip VERSION 1.0.${PATCH_VERSION})
 
-find_package(Boost COMPONENTS unit_test_framework REQUIRED)
+# find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 add_executable(print_ip main.cpp)
 
@@ -21,24 +22,26 @@ set_target_properties(print_ip test_printer PROPERTIES
   COMPILE_OPTIONS -Wpedantic -Wall -Wextra
 )
 
-target_link_libraries(print_ip
-  ${Boost_LIBRARIES}
-)
+# target_link_libraries(print_ip
+#   ${Boost_LIBRARIES}
+# )
 
-set_target_properties(test_printer PROPERTIES
-  COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
-  INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
-)
+# set_target_properties(test_printer PROPERTIES
+#   COMPILE_DEFINITIONS BOOST_TEST_DYN_LINK
+#   INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
+# )
 
 
-target_link_libraries(test_printer
-  ${Boost_UNIT_TEST_LIBRARIES}
-  ${Boost_LIBRARIES}
-)
+# target_link_libraries(test_printer
+#   ${Boost_UNIT_TEST_LIBRARIES}
+#   ${Boost_LIBRARIES}
+# )
 
 
 configure_file("${PROJECT_SOURCE_DIR}/version.h.in" "${PROJECT_BINARY_DIR}/version.h")
 target_include_directories(print_ip PUBLIC "${PROJECT_BINARY_DIR}")
+target_include_directories(print_ip PUBLIC "${PROJECT_SOURCE_DIR}/includes")
+target_include_directories(test_printer PUBLIC "${PROJECT_SOURCE_DIR}/includes")
 
 
 install(TARGETS print_ip RUNTIME DESTINATION bin)
@@ -56,3 +59,4 @@ include (CPack)
 enable_testing()
 
 add_test(test_printer test_printer)
+
